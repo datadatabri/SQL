@@ -1,0 +1,37 @@
+--Create a grocery store database
+
+CREATE TABLE glam_bam (id INTEGER PRIMARY KEY, sku INTEGER, item TEXT, color TEXT, price INTEGER, category TEXT, quantity INTEGER);
+
+INSERT INTO glam_bam VALUES (1, 84652, "Groovy Too", "blue", 23.00, "shirt", 83);
+INSERT INTO glam_bam VALUES (2, 06874, "Fly Away", "red", 23.00, "shirt", 33);
+INSERT INTO glam_bam VALUES (3, 46326, "Fluff", "pink", 23.00, "shirt", 74);
+INSERT INTO glam_bam VALUES (4, 23471, "Yesteryear", "pink", 23.00, "shirt", 29);
+INSERT INTO glam_bam VALUES (5, 76364, "Rainbow Dress", "green", 45.00, "dress", 67); 
+INSERT INTO glam_bam VALUES (6, 90674, "Sunshine Boots", "yellow", 65.00, "shoes", 30);
+INSERT INTO glam_bam VALUES (7, 78435, "Studded Belt", "black", 20.00, "accessory", 24); 
+INSERT INTO glam_bam VALUES (8, 90781, "Jean Skirt", "blue", 25.00, "bottoms", 43);
+INSERT INTO glam_bam VALUES (9, 98457, "Magical Skirt", "pink", 23.00, "bottoms",60);
+INSERT INTO glam_bam VALUES (10, 81243, "Everyday Bag", "tan", 30.00,"accessory", 28);
+INSERT INTO glam_bam VALUES (11, 39571, "Happy Everyday", "green", 23.00, "shirt", 44);
+INSERT INTO glam_bam VALUES (12, 74837, "Puppy Love", "pink", 23.00, "shirt", 32);
+INSERT INTO glam_bam VALUES (13, 00638, "Platform Pumps", "black", 70.00, "shoes",29);
+INSERT INTO glam_bam VALUES (14, 44837, "I Love Kitten", "white", 23.00, "shirt", 45);
+INSERT INTO glam_bam VALUES (15, 97488, "Hippie Pride", "red", 23.00, "shirt", 60);
+
+--Display the database ordered by price.
+
+SELECT * 
+FROM glam_bam 
+ORDER BY price;
+
+--What are the total amount of items in the database? 
+
+SELECT SUM(quantity) 
+FROM glam_bam
+
+--What are the top five items with the most merchandise?
+
+SELECT item, price, quantity 
+FROM glam_bam 
+ORDER BY quantity desc 
+limit 5;
